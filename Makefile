@@ -1,9 +1,10 @@
-NAME =      push_swap
+NAME =      push_swap.a
 HEADER =    -I ./includes
 SRC_DIR =   ./sources
 OBJ_DIR =	./objects
-LIBFT 	=	./libft/libft.a
-SRC_FILES =   	push_swap.c utils.c 
+LIBFT 	=	./libraries/libft/libft.a
+PRINTF 	=	./libraries/printf/libftprintf.a
+SRC_FILES =   push_swap.c utils.c
 
 CC =		cc 
 
@@ -15,11 +16,12 @@ OBJ =		$(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME) 
+$(NAME): $(OBJ) $(LIBFT) #$(PRINTF)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME) $(PRINTF) -o $(NAME) 
 
-$(LIBFT):
-	make -C ./libft
+$(LIBFT) $(PRINTF):
+	make -C ./libraries/libft
+	make -C ./libraries/printf
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
 	@mkdir -p $(OBJ_DIR)
@@ -27,11 +29,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	rm -rf $(OBJ_DIR)
-	make clean -C ./libft
+	make clean -C ./libraries/libft
+	make clean -C ./libraries/printf
 
 fclean: clean
 	rm -f $(NAME)
-	make fclean -C ./libft
+	make fclean -C ./libraries/libft
+	make fclean -C ./libraries/printf
 
 re: fclean all
 

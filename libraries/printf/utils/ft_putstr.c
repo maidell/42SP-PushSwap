@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/01/15 07:12:41 by mmaidel-         ###   ########.fr       */
+/*   Created: 2023/01/15 06:34:02 by mmaidel-          #+#    #+#             */
+/*   Updated: 2023/01/15 06:34:04 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+#include "ft_printf.h"
 
-int test (void);
+int	ft_putstr(char *s)
+{	
+	int	count_size;
 
-
-#endif
+	count_size = 0;
+	if (!s)
+	{
+		ft_printf("(null)");
+		return (6);
+	}
+	while (s[count_size] != '\0')
+	{
+		write (1, &s[count_size], 1);
+		count_size++;
+	}
+	return (count_size);
+}

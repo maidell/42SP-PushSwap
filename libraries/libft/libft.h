@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 02:18:14 by mmaidel-          #+#    #+#             */
-/*   Updated: 2022/06/28 01:26:47 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/01/15 05:59:10 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <stdarg.h>
+
+int	ft_putchar(char c);
+int	ft_putnbr(long int n);
+int	ft_putstr(char *str);
+int	format(const char *str, va_list type);
+int	ft_printf(const char *printer, ...);
+int	ft_puthex(unsigned long long number, char flag);
 
 int		ft_isalnum(int arg);
 int		ft_isdigit(int arg);

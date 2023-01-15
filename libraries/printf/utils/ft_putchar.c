@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/01/15 07:12:41 by mmaidel-         ###   ########.fr       */
+/*   Created: 2023/01/15 06:33:48 by mmaidel-          #+#    #+#             */
+/*   Updated: 2023/01/15 06:33:50 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+#include "ft_printf.h"
 
-int test (void);
-
-
-#endif
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
