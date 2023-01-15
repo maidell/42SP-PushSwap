@@ -1,42 +1,67 @@
-NAME =      push_swap.a
-HEADER =    -I ./includes
-SRC_DIR =   ./sources
-OBJ_DIR =	./objects
-LIBFT 	=	./libraries/libft/libft.a
-PRINTF 	=	./libraries/printf/libftprintf.a
-SRC_FILES =   push_swap.c utils.c
+NAME		= push_swap
 
-CC =		cc 
+SRCS		= utils.c
 
-CFLAGS =	-Wall -Wextra -Werror -g3
+MAIN_M		= push_swap.c
+SRC_DIR		= ./sources
 
-SRC =		$(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS		= $(addprefix $(SRC_DIR)/, $(SRCS:.c=.o) $(MAIN_M:.c=.o)) 
 
-OBJ =		$(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+LIBFT_D		= libft
+LIBFT_I		= -I$(LIBFT_D)
+LIBFT_L		= -L$(LIBFT_D) -lft
+LIBFT_A		= $(LIBFT_D)/libft.a
 
+LINKER		= cc
+COMPILER	= cc -c
+CFLAGS		= -g -Wall -Werror -Wextra
+
+CLEANUP		= rm -rf
+
+.PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT) #$(PRINTF)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME) $(PRINTF) -o $(NAME) 
+.PHONY:bonus
+bonus: $(BONUS)
 
-$(LIBFT) $(PRINTF):
-	make -C ./libraries/libft
-	make -C ./libraries/printf
+$(NAME): $(OBJS)
+	@printf "compiling $(NAME) ... \t\t"
+	@$(LINKER) $(CFLAGS) $^ $(LIBFT_L) -o $@
+	@echo OK!
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(HEADER) -c  $< -o $@
+$(BONUS): $(OBJS_B)
+	@printf "compiling $(BONUS) ... \t\t\t"
+	@$(LINKER) $(CFLAGS) $^ $(LIBFT_L) -o $@
+	@echo OK!
 
+$(LIBFT_A):
+	@printf "compiling libft ... \t\t\t"
+	@make -s -C $(LIBFT_D)
+	@echo OK!
+
+%.o: %.c $(LIBFT_A) $(GNL_A)
+	@$(COMPILER) $(CFLAGS) $(LIBFT_I) $< -o $@
+
+.PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR)
-	make clean -C ./libraries/libft
-	make clean -C ./libraries/printf
-
+	@printf "cleaning $(NAME) objects ... \t\t"
+	@$(CLEANUP) $(OBJS)
+	@echo OK!
+	@printf "cleaning $(BONUS) objects ... \t\t"
+	@$(CLEANUP) $(OBJS_B)
+	@echo OK!
+	@printf "cleaning libft objects ... \t\t"
+	@make -s -C $(LIBFT_D) clean
+	@echo OK!
+	
+.PHONY: fclean
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C ./libraries/libft
-	make fclean -C ./libraries/printf
+	@printf "cleaning $(NAME) executable ... \t"
+	@$(CLEANUP) $(NAME)
+	@echo OK!
+	@printf "cleaning libft static library ... \t"
+	@make -s -C $(LIBFT_D) fclean
+	@echo OK!
 
+.PHONY: re
 re: fclean all
-
-.PHONY: all clean fclean re

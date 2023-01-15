@@ -6,9 +6,11 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/01/15 07:13:42 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/01/15 12:19:18 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 int test(void)
 {
