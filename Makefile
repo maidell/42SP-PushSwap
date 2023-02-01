@@ -2,10 +2,14 @@ NAME		= push_swap
 
 SRCS		= utils.c
 
+# Path for .c , .h and .o Files 
 MAIN_M		= push_swap.c
 SRC_DIR		= ./sources
+OBJ_DIR =	./objects
+HEADER =    -I ./includes
 
-OBJS		= $(addprefix $(SRC_DIR)/, $(SRCS:.c=.o) $(MAIN_M:.c=.o)) 
+
+OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o) $(MAIN_M:.c=.o)) 
 
 LIBFT_D		= libft
 LIBFT_I		= -I$(LIBFT_D)
@@ -21,16 +25,8 @@ CLEANUP		= rm -rf
 .PHONY: all
 all: $(NAME)
 
-.PHONY:bonus
-bonus: $(BONUS)
-
 $(NAME): $(OBJS)
 	@printf "compiling $(NAME) ... \t\t"
-	@$(LINKER) $(CFLAGS) $^ $(LIBFT_L) -o $@
-	@echo OK!
-
-$(BONUS): $(OBJS_B)
-	@printf "compiling $(BONUS) ... \t\t\t"
 	@$(LINKER) $(CFLAGS) $^ $(LIBFT_L) -o $@
 	@echo OK!
 
@@ -39,8 +35,9 @@ $(LIBFT_A):
 	@make -s -C $(LIBFT_D)
 	@echo OK!
 
-%.o: %.c $(LIBFT_A) $(GNL_A)
-	@$(COMPILER) $(CFLAGS) $(LIBFT_I) $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(LIBFT_A) 
+	@mkdir -p $(OBJ_DIR)
+	@$(COMPILER) $(CFLAGS) $(LIBFT_I) $(HEADER) $< -o $@
 
 .PHONY: clean
 clean:
