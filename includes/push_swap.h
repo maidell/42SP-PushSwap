@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/04 17:11:08 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/04 19:51:19 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,12 @@ typedef struct s_stack
     
 }   t_stack;
 
+// stack functions
 t_nodo	*create_nodo(int value);
 t_stack *create_stack(void);
+t_nodo	*insert_node(t_stack *stack, int num);
+
+
+
 
 #endif

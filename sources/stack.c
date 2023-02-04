@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/04 19:39:30 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/04 19:51:11 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_nodo	*create_nodo(int value)
 {
 	t_nodo	*new;
 
-	new = (t_stack *)malloc(sizeof(t_stack));
+	new = (t_nodo *)malloc(sizeof(t_nodo));
 	if (!(new))
 		return (NULL);
 	new->value = value;
@@ -40,7 +40,7 @@ t_stack	*create_stack(void)
 }
 
 // função de inserir nodo na stack
-int	insert_node(t_stack *stack, int num)
+t_nodo	*insert_node(t_stack *stack, int num)
 {
 	t_nodo *new_node;
 	new_node = create_nodo(num);
@@ -55,4 +55,5 @@ int	insert_node(t_stack *stack, int num)
 		stack->top->next = new_node;
 		stack->top = new_node;
 	}
+    return new_node;
 }
