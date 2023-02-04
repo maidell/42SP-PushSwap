@@ -1,12 +1,11 @@
 NAME		= push_swap
 
-SRCS		= utils.c
-
 # Path for .c , .h and .o Files 
 MAIN_M		= push_swap.c
 SRC_DIR		= ./sources
 OBJ_DIR =	./objects
 HEADER =    -I ./includes
+SRCS		= stack.c push.c rotate.c swap.c utils.c
 
 
 OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o) $(MAIN_M:.c=.o)) 
