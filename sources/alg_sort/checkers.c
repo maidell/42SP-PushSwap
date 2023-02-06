@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 05:07:59 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 04:15:38 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:20:42 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// radix sort
+// checa se a stack está ordenada, se estiver retorna 0, se não exit(1)
 void	check_sort(int argc, char *argv[])
 {
 	int	i;
@@ -27,9 +27,11 @@ void	check_sort(int argc, char *argv[])
 	exit(1);
 }
 
-int	insufficient_args(int argc)
+void	insufficient_args(int argc)
 {
 	if (argc <= 2)
-		return (1);
-	return (0);
+	{
+		exit(0);
+	}
 }
+

@@ -6,13 +6,13 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 01:46:24 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 04:13:36 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:33:52 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_args(int argc, char *argv[])
+void	check_err(int argc, char *argv[])
 {
 	if (invalid_number(argv) ||
 		has_duplicates(argc, argv))

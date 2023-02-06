@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 04:14:50 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:20:58 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,35 @@ int					has_duplicates(int argc, char *argv[]);
 int					limits_int(char *str);
 int					not_digit(char *str);
 int					invalid_number(char *argv[]);
-void				check_args(int argc, char *argv[]);
+void				check_err(int argc, char *argv[]);
 
 // radix sort
-int					insufficient_args(int argc);
-int					check_sort(int argc, char *argv[]);
+void				insufficient_args(int argc);
+void				check_sort(int argc, char *argv[]);
 
+// sort functions
+void				pa(t_stack *a, t_stack *b);
+void				pb(t_stack *a, t_stack *b);
+void				ra(t_stack *a);
+void				rb(t_stack *b);
+void				rr(t_stack *a, t_stack *b);
+void				rra(t_stack *a);
+void				rrb(t_stack *b);
+void				rrr(t_stack *a, t_stack *b);
+void				sa(t_stack *a);
+void				sb(t_stack *b);
+void				ss(t_stack *a, t_stack *b);
+void				reverse_rotate(t_stack *stack);
+
+// sort five functions
+
+void				sort_two(t_stack *stack);
+void				sort_three(t_stack *stack);
+
+// bubble sort
+void				bubble_sort(int *array, int size);
+
+// utils sort functions
+int					max_value(t_stack *stack);
+int					min_value(t_stack *stack);
 #endif
