@@ -6,10 +6,30 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 02:55:23 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/03 05:06:04 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:59:00 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// cria função "push" que pega o elemento do topo da stack x e coloca no topo da stack y
+void	push(t_stack *x, t_stack *y)
+{
+    t_nodo	*tmp;
 
+    if (x->top == NULL)
+        return ;
+    tmp = x->top;
+    x->top = x->top->prev;
+    if (x->top != NULL)
+        x->top->next = NULL;
+    else
+        x->bottom = NULL;
+    tmp->prev = y->top;
+    tmp->next = NULL;
+    y->top = tmp;
+    if (y->top->prev != NULL)
+        y->top->prev->next = y->top;
+    else
+        y->bottom = y->top;
+}

@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/04 19:51:11 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:57:25 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ t_stack	*create_stack(void)
 	return (new);
 }
 
-// função de inserir nodo na stack
 t_nodo	*insert_node(t_stack *stack, int num)
 {
 	t_nodo *new_node;
@@ -56,4 +55,23 @@ t_nodo	*insert_node(t_stack *stack, int num)
 		stack->top = new_node;
 	}
     return new_node;
+}
+
+void	free_stack(t_stack *stack)
+{
+    t_nodo *tmp;
+
+    while (stack->bottom)
+    {
+        tmp = stack->bottom;
+        stack->bottom = stack->bottom->next;
+        free(tmp);
+    }
+    free(stack);
+}
+ 
+void free_all(t_stack *a, t_stack *b)
+{
+    free_stack(a);
+    free_stack(b);
 }

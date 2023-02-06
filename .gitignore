@@ -3,3 +3,4 @@ objects
 *.o
 push_swap
 a.out
+*.a

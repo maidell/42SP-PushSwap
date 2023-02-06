@@ -5,12 +5,12 @@ MAIN_M		= push_swap.c
 SRC_DIR		= ./sources
 OBJ_DIR =	./objects
 HEADER =    -I ./includes
-SRCS		= stack.c push.c rotate.c swap.c utils.c
+SRCS		= stack.c push.c rotate.c swap.c utils.c movements.c
 
 
 OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o) $(MAIN_M:.c=.o)) 
 
-LIBFT_D		= libft
+LIBFT_D		= ./libft
 LIBFT_I		= -I$(LIBFT_D)
 LIBFT_L		= -L$(LIBFT_D) -lft
 LIBFT_A		= $(LIBFT_D)/libft.a
@@ -24,9 +24,9 @@ CLEANUP		= rm -rf
 .PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIBFT_A)
 	@printf "compiling $(NAME) ... \t\t"
-	@$(LINKER) $(CFLAGS) $^ $(LIBFT_L) -o $@
+	@$(LINKER) $(CFLAGS) $^ $(LIBFT_A) -o $@ $(LIBFT_L)
 	@echo OK!
 
 $(LIBFT_A):
@@ -34,7 +34,7 @@ $(LIBFT_A):
 	@make -s -C $(LIBFT_D)
 	@echo OK!
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(LIBFT_A) 
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c  
 	@mkdir -p $(OBJ_DIR)
 	@$(COMPILER) $(CFLAGS) $(LIBFT_I) $(HEADER) $< -o $@
 
