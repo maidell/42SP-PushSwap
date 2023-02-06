@@ -5,7 +5,8 @@ MAIN_M		= push_swap.c
 SRC_DIR		= ./sources
 OBJ_DIR =	./objects
 HEADER =    -I ./includes
-SRCS		= stack.c push.c rotate.c swap.c utils.c movements.c
+SRCS		= 	stack.c push.c rotate.c swap.c utils.c movements.c \
+				handle_errors.c 
 
 
 OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o) $(MAIN_M:.c=.o)) 
