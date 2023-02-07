@@ -28,6 +28,7 @@ SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/sort_algs/sort_five.c \
 		$(SRCS_PATH)/sort_algs/sort_utils.c \
 		$(SRCS_PATH)/sort_algs/bubble_sort.c \
+		$(SRCS_PATH)/sort_algs/handle_errors.c \
 
 LIBFT_D		= ./libft
 LIBFT_I		= -I$(LIBFT_D)
