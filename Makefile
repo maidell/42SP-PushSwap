@@ -23,11 +23,11 @@ SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/operations/push.c \
 		$(SRCS_PATH)/operations/rotate.c \
 		$(SRCS_PATH)/operations/swap.c \
-		$(SRCS_PATH)/bubble_sort.c \
-		$(SRCS_PATH)/handle_errors.c \
-		$(SRCS_PATH)/alg_sort/sort_five.c \
-		$(SRCS_PATH)/alg_sort/checkers.c \
-		$(SRCS_PATH)/alg_sort/sort_utils.c \
+		$(SRCS_PATH)/check_full/checkers.c \
+		$(SRCS_PATH)/check_full/handle_errors.c \
+		$(SRCS_PATH)/sort_algs/sort_five.c \
+		$(SRCS_PATH)/sort_algs/sort_utils.c \
+		$(SRCS_PATH)/sort_algs/bubble_sort.c \
 
 LIBFT_D		= ./libft
 LIBFT_I		= -I$(LIBFT_D)
