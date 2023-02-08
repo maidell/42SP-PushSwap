@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 17:27:55 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:29:23 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,41 @@ void	sort_three(t_stack *stack)
 		rra(stack);
 		sort_two(stack);
 	}
+}
+
+int 	sort_five(t_stack *stack)
+{
+	int		i;
+	int		j;
+	int		min;
+	int		max;
+	t_stack	*stack_b;
+
+	i = 0;
+	j = 0;
+	stack_b = create_stack();
+	while (i < 2)
+	{
+		min = min_value(stack);
+		max = max_value(stack);
+		if (stack->top->value == min || stack->top->value == max)
+		{
+			pb(stack, stack_b);
+			i++;
+		}
+		else
+		{
+			ra(stack);
+			j++;
+		}
+	}
+	sort_three(stack);
+	while (j > 0)
+	{
+		rra(stack);
+		j--;
+	}
+	pa(stack, stack_b);
+	pa(stack, stack_b);
+	return (1);
 }

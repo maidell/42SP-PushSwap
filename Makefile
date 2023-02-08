@@ -2,10 +2,13 @@ NAME		= push_swap
 
 GREEN		= \033[0;32m
 GREY		= \033[0;90m
+YELLOW		= \033[1;33m
+FRED		= \033[41;1;37m
+RED			= \033[0;31m
 RESET		= \033[0m
 
-LIBFT_PATH	= ./libft
-LIBFT		= ./libft/libft.a
+
+OBJ_DIR = ./objects
 
 SRCS_PATH	= ./sources
 
@@ -16,6 +19,11 @@ FLAGS 		= -Wall -Wextra -Werror
 REMOVE 		= rm -f
 
 INCLUDES 	= -I ./includes/
+
+LIBFT_D		= ./libft
+LIBFT_I		= -I$(LIBFT_D)
+LIBFT_L		= -L$(LIBFT_D) -lft
+LIBFT_A		= $(LIBFT_D)/libft.a
 
 SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/operations/stack.c \
@@ -28,38 +36,38 @@ SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/sort_algs/sort_five.c \
 		$(SRCS_PATH)/sort_algs/sort_utils.c \
 		$(SRCS_PATH)/sort_algs/bubble_sort.c \
-		$(SRCS_PATH)/sort_algs/handle_errors.c \
+		$(SRCS_PATH)/sort_algs/handle_index.c \
 
-LIBFT_D		= ./libft
-LIBFT_I		= -I$(LIBFT_D)
-LIBFT_L		= -L$(LIBFT_D) -lft
-LIBFT_A		= $(LIBFT_D)/libft.a
+OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 
-$(NAME): $(OBJS) $(LIBFT_A)
-
-$(LIBFT_A):
-	@printf "compiling libft ... \t\t\t"
-	@make -s -C $(LIBFT_D)
-	@echo OK!
 
 all:		$(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	@printf "compiling $(NAME) ... \t\t"
-	@$(CC) $(INCLUDES) -o $(NAME) $(SRCS) $(FLAGS) $(LIBFT)
-	@echo OK!
-	@echo "$(GREY)$(NAME): $(GREEN)$(NAME) was created$(RESET)"
+$(NAME): $(OBJS) $(LIBFT_A)
+	@printf "$(YELLOW)compiling $(NAME) ... $(RESET)"
+	@$(CC) $(FLAGS) $(INCLUDES) $(LIBFT_I) $(OBJS) $(LIBFT_L) -o $(NAME)
+	@echo "$(GREEN)Done!!$(RESET)"
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(FLAGS) $(INCLUDES) $(LIBFT_I) -c $< -o $@
+
+$(LIBFT_A):
+	@echo "$(YELLOW)Compiling libft ... \t\c$(RESET)"
+	@$(MAKE) -s -C $(LIBFT_D)
+	@echo "$(GREEN)Done!!$(RESET)"
 
 clean:
 	@${REMOVE} ${NAME}
-	@echo "$(GREY)$(NAME): $(NAME) was deleted$(RESET)"
+	@echo "$(FRED)\t\t\t\n\n$(NAME): $(NAME) was deleted\t\t\t\n\n$(RESET)"
 
 
 fclean:
-	make fclean -C $(LIBFT_PATH)/
-	@printf "cleaning $(NAME) executable ... \t"
+	@make -s fclean -C $(LIBFT_D)/
+	@printf "$(RED)cleaning $(NAME) executable ... \n$(RESET)"
 	@$(REMOVE) $(NAME)
-	@echo "$(GREY)$(NAME): $(NAME) was deleted$(RESET)"
+	@$(REMOVE)  -r $(OBJ_DIR)
+	@echo "$(FRED)\t\t\t\n\n$(NAME): $(NAME) was deleted\t\t\t\n\n$(RESET)"
 
 re:			clean $(NAME)
 
