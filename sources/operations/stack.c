@@ -6,23 +6,24 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 04:08:36 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 14:52:23 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // cria nodo com valor apontando NULL
-t_nodo	*create_nodo(int value)
+t_node	*create_node(int value)
 {
-	t_nodo	*new;
+	t_node	*new;
 
-	new = (t_nodo *)malloc(sizeof(t_nodo));
+	new = (t_node *)malloc(sizeof(t_node));
 	if (!(new))
 		return (NULL);
 	new->value = value;
 	new->next = NULL;
 	new->prev = NULL;
+	new->index = 0;
 	return (new);
 }
 
@@ -39,28 +40,31 @@ t_stack	*create_stack(void)
 	return (new);
 }
 
-t_nodo	*insert_node(t_stack *stack, int num)
+t_node	*insert_node(t_stack *stack, int num)
 {
-	t_nodo	*new_node;
+	t_node	*new_node;
 
-	new_node = create_nodo(num);
+	new_node = create_node(num);
 	if (stack->bottom == NULL && stack->top == NULL)
 	{
 		stack->bottom = new_node;
 		stack->top = new_node;
+		//new_node->index = 0;
 	}
 	else
 	{
 		new_node->prev = stack->top;
 		stack->top->next = new_node;
 		stack->top = new_node;
+		//new_node->index = new_node->prev->index + 1;
 	}
+
 	return (new_node);
 }
 
 void	free_stack(t_stack *stack)
 {
-	t_nodo	*tmp;
+	t_node	*tmp;
 
 	while (stack->bottom)
 	{
@@ -76,3 +80,7 @@ void	free_all(t_stack *a, t_stack *b)
 	free_stack(a);
 	free_stack(b);
 }
+
+
+// recebe uma stack e percorre por ela criando uma copia
+

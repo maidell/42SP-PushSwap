@@ -6,43 +6,58 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:13:11 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 16:36:14 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 15:38:24 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	max_value(t_stack *stack)
+// max_index retorna o indice do maior valor da stack
+int max_index(t_stack *stack)
 {
-	int		max;
-	t_nodo	*tmp;
+    int max;
+    int index;
+    int i;
+    t_node *node;
 
-	max = MAX_INT;
-	max = stack->top->value;
-	tmp = stack->top;
-	while (tmp)
-	{
-		if (tmp->value > max)
-			max = tmp->value;
-		tmp = tmp->prev;
-	}
-	return (max);
+    max = stack->top->value;
+    index = 0;
+    i = 0;
+    node = stack->top;
+    while (node)
+    {
+        if (node->value > max)
+        {
+            max = node->value;
+            index = i;
+        }
+        node = node->next;
+        i++;
+    }
+    return (index);
 }
 
-// the function return the min value of the stack
-int	min_value(t_stack *stack)
+// min_index retorna o indice do menor valor da stack   
+int min_index(t_stack *stack)
 {
-	int min;
-	min = MIN_INT;
-	t_nodo *tmp;
+    int min;
+    int index;
+    int i;
+    t_node *node;
 
-	min = stack->top->value;
-	tmp = stack->top;
-	while (tmp)
-	{
-		if (tmp->value < min)
-			min = tmp->value;
-		tmp = tmp->prev;
-	}
-	return (min);
+    min = stack->top->value;
+    index = 0;
+    i = 0;
+    node = stack->top;
+    while (node)
+    {
+        if (node->value < min)
+        {
+            min = node->value;
+            index = i;
+        }
+        node = node->next;
+        i++;
+    }
+    return (index);
 }

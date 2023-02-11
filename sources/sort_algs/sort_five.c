@@ -6,75 +6,111 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/08 13:29:23 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:16:29 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two(t_stack *stack)
+void	sort_two(t_stack *stack_a)
 {
-	sa(stack);
+	sa(stack_a);
 }
 
-void	sort_three(t_stack *stack)
+void	sort_three(t_stack *stack_a)
 {
-	// se max_value for o topo
-	if (stack->top->value == max_value(stack))
+	if (stack_a->bottom->index == 0 && stack_a->top->index == 2)
 	{
-		ra(stack);
-		sort_two(stack);
+		ra(stack_a);
+		sort_two(stack_a);
 	}
-	// se max_value for o bottom
-	else if (stack->bottom->value == max_value(stack))
-		sort_two(stack);
-	// se min_value for o bottom, faço rra
-	else if (stack->bottom->value == min_value(stack))
+	else if (stack_a->bottom->index == 1 && stack_a->top->index == 2)
 	{
-		rra(stack);
+		ra(stack_a);
 	}
-	//se min_value for o bottom e max_value for o topo
-	else if (!(stack->bottom->value == min_value(stack)
-				&& stack->top->value == max_value(stack)))
+	else if (stack_a->bottom->index == 0 && stack_a->top->index == 1)
 	{
-		rra(stack);
-		sort_two(stack);
+		rra(stack_a);
+	}
+	else if (stack_a->bottom->index == 2 && stack_a->top->index == 1)
+	{
+		sort_two(stack_a);
+	}
+	else if (stack_a->bottom->index == 1 && stack_a->top->index == 0)
+	{
+		sort_two(stack_a);
+		ra(stack_a);
 	}
 }
 
-int 	sort_five(t_stack *stack)
+void	sort_four(t_stack *stack_a,t_stack *stack_b)
 {
-	int		i;
-	int		j;
-	int		min;
-	int		max;
-	t_stack	*stack_b;
+	if (stack_a->top->index == 3)
+	{
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
+	}
+	else if (stack_a->bottom->index == 3)
+	{
+		rra(stack_a);
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
+	}
+	else if (stack_a->bottom->index == 2)
+	{
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+	}
+	else if (stack_a->top->index == 2)
+	{
+		rra(stack_a);
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+	}
+	else if (stack_a->bottom->index == 1)
+	{
+		ra(stack_a);
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+		rra(stack_a);
+	}
+	else if (stack_a->top->index == 1)
+	{
+		rra(stack_a);
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
+	}
+	
+	
+	
+}
+void	sort_less_five(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a->size == 2)
+		sort_two(stack_a);
+	else if (stack_a->size == 3)
+		sort_three(stack_a);
+	else if (stack_a->size == 4)
+		sort_four(stack_a, stack_b);
+	//else if (stack->size == 5)
+	//	sort_five(stack);
+}
 
-	i = 0;
-	j = 0;
-	stack_b = create_stack();
-	while (i < 2)
-	{
-		min = min_value(stack);
-		max = max_value(stack);
-		if (stack->top->value == min || stack->top->value == max)
-		{
-			pb(stack, stack_b);
-			i++;
-		}
-		else
-		{
-			ra(stack);
-			j++;
-		}
-	}
-	sort_three(stack);
-	while (j > 0)
-	{
-		rra(stack);
-		j--;
-	}
-	pa(stack, stack_b);
-	pa(stack, stack_b);
-	return (1);
+void	sort_all(t_stack *stack_a, t_stack *stack_b)
+{
+	// t_stack *temp_stack;
+	//temp_stack = sort_stack_copy(stack);
+	if (stack_a->size <= 5)
+		sort_less_five(stack_a, stack_b);
+	//else
+	//radix_sort(stack);
 }
