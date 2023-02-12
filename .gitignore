@@ -6,3 +6,4 @@ a.out
 *.a
 checker_linux
 all5.sh
+*.txt
