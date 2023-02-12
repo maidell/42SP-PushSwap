@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:17:54 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:56:35 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	sort_two(t_stack *stack_a)
 
 void	sort_three(t_stack *stack_a)
 {
-	if (check_sort_stack(stack_a) == 1){
+	if (check_sort_stack(stack_a) == 1)
+	{
 		if (stack_a->bottom->index == 0 && stack_a->top->index == 2)
 		{
 			ra(stack_a);
@@ -48,49 +49,69 @@ void	sort_three(t_stack *stack_a)
 
 void	sort_four(t_stack *stack_a, t_stack *stack_b)
 {
-	if (stack_a->top->index == 3)
+	if (check_sort_stack(stack_a) == 1)
 	{
-		pb(stack_a, stack_b);
-		sort_three(stack_a);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (stack_a->bottom->index == 3)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_three(stack_a);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (stack_a->bottom->index == 2)
-	{
-		pb(stack_a, stack_b);
-		sort_three(stack_a);
-		pa(stack_a, stack_b);
-	}
-	else if (stack_a->top->index == 2)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_three(stack_a);
-		pa(stack_a, stack_b);
-	}
-	else if (stack_a->bottom->index == 1)
-	{
-		ra(stack_a);
-		pb(stack_a, stack_b);
-		sort_three(stack_a);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (stack_a->top->index == 1)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_three(stack_a);
-		pa(stack_a, stack_b);
-		ra(stack_a);
+		if (stack_a->top->index == 3)
+		{
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		if (stack_a->bottom->index == 3)
+		{
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		if (stack_a->bottom->next->index == 3)
+		{
+			rra(stack_a);
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		if (stack_a->top->prev->index == 3)
+		{
+			ra(stack_a);
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		if (stack_a->bottom->index == 2)
+		{
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+		}
+		if (stack_a->top->index == 2)
+		{
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+		}
+		if (stack_a->bottom->index == 1)
+		{
+			ra(stack_a);
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+			rra(stack_a);
+		}
+		if (stack_a->top->index == 1)
+		{
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_three(stack_a);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
 	}
 }
 
@@ -107,154 +128,49 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 	top_prev = stack_a->top->prev->index;
 	bottom = stack_a->bottom->index;
 	top = stack_a->top->index;
-	if (top == 4)
+	if (check_sort_stack(stack_a) == 1)
 	{
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (bottom == 4)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (top_prev == 4)
-	{
-		ra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (half == 4)
-	{
-		ra(stack_a);
-		ra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (half == 0 && top == 4)
-	{
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (half == 0 && bottom == 4)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (half == 0 && bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (half == 0 && top_prev == 4)
-	{
-		ra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (bottom_next == 0 && bottom == 4)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (top_prev == 0 && top == 4)
-	{
-		ra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (top_prev == 0 && bottom == 4)
-	{
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (bottom_next == 0 && top == 4)
-	{
-		ra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		ra(stack_a);
-	}
-	else if (top_prev == 0 && bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (top_prev == 0 && bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (top_prev == 0 && bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (top_prev == 0 && bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-	else if (top_prev == 0 && bottom_next == 4)
-	{
-		rra(stack_a);
-		rra(stack_a);
-		pb(stack_a, stack_b);
-		sort_four(stack_a, stack_b);
-		pa(stack_a, stack_b);
+		if (top == 4)
+		{
+			pb(stack_a, stack_b);
+			sort_four(stack_a, stack_b);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		if (bottom_next == 4)
+		{
+			rra(stack_a);
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_four(stack_a, stack_b);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		if (bottom == 4)
+		{
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_four(stack_a, stack_b);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		else if (top_prev == 4)
+		{
+			ra(stack_a);
+			pb(stack_a, stack_b);
+			sort_four(stack_a, stack_b);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		else if (half == 4)
+		{
+			ra(stack_a);
+			ra(stack_a);
+			pb(stack_a, stack_b);
+			sort_four(stack_a, stack_b);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
 	}
 }
 
