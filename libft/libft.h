@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 02:18:14 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/01/15 05:59:10 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/12 00:03:16 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <stdarg.h>
 
 int	ft_putchar(char c);

@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:20:14 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/12 00:04:37 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_node(t_node *node)
 {
 	if (node == NULL)
 		return ;
-	printf("%d (%d)\n", node->value,node->index);
+	ft_printf("%d (%d)\n", node->value,node->index);
 	print_node(node->prev);
 }
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	b = create_stack();
 	fill_stack(argc, argv, a);
 	is_input_sort(argc, argv);
-	
+
 	//printa a stack a preenchida:
 		//printf("Stack A\n");
 		//print_node(a->top);
