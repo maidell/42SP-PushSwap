@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 17:28:02 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:20:14 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	a = create_stack();
 	b = create_stack();
 	fill_stack(argc, argv, a);
-	check_sort(argc, argv);
+	is_input_sort(argc, argv);
 	
 	//printa a stack a preenchida:
 		//printf("Stack A\n");
@@ -57,8 +57,8 @@ int	main(int argc, char **argv)
 	sort_all(a, b);
 	
 	//printa a stack a preenchida com os indices:
-		//printf("Stack A ordenada\n");
-		//	print_node(a->top);
+	//printf("Stack A ordenada\n");
+	//print_node(a->top);
 
 	
 	free_all(a, b);

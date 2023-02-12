@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:13:11 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 15:38:24 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 22:01:06 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,21 @@ int min_index(t_stack *stack)
         i++;
     }
     return (index);
+}
+
+// verifica se a stack está ordenada
+int	is_sorted(t_node **node)
+{
+	t_node		*temp;
+
+	temp = *node;
+	while (temp)
+	{
+		if (!temp->next)
+			return (1);
+		if (temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
 }

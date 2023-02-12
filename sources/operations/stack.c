@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 14:52:23 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/11 22:46:07 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,25 @@ t_node	*insert_node(t_stack *stack, int num)
 	return (new_node);
 }
 
+// função que recebe uma stack e da free em todos os nodos iniciando do topo, depois da free no topo e no bottom da stack
 void	free_stack(t_stack *stack)
 {
+	t_node	*node;
 	t_node	*tmp;
 
-	while (stack->bottom)
+	node = stack->top;
+	while (node)
 	{
-		tmp = stack->bottom;
-		stack->bottom = stack->bottom->next;
+		tmp = node;
+		node = node->prev;
 		free(tmp);
 	}
 	free(stack);
 }
 
+// free all
 void	free_all(t_stack *a, t_stack *b)
 {
 	free_stack(a);
 	free_stack(b);
 }
-
-
-// recebe uma stack e percorre por ela criando uma copia
-
