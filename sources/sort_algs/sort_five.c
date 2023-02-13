@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:33:08 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:54:47 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,44 +117,33 @@ void	sort_four(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_five(t_stack *stack_a, t_stack *stack_b)
 {
-	int	bottom;
-	int	top;
-	int	bottom_next;
-	int	top_prev;
-	int	half;
-
-	half = stack_a->bottom->next->next->index;
-	bottom_next = stack_a->bottom->next->index;
-	top_prev = stack_a->top->prev->index;
-	bottom = stack_a->bottom->index;
-	top = stack_a->top->index;
 	if (check_sort_stack(stack_a) == 0)
 	{
-		if (top == 4)
+		if (stack_a->top->index == 4)
 		{
 			pb(stack_a, stack_b);
 			sort_four(stack_a, stack_b);
 			pa(stack_a, stack_b);
 			ra(stack_a);
 		}
-		if (bottom_next == 4)
+		if (stack_a->bottom->next->index == 4)
 		{
 			rra(stack_a);
-			rra(stack_a);
-			pb(stack_a, stack_b);
-			sort_four(stack_a, stack_b);
-			pa(stack_a, stack_b);
-			ra(stack_a);
-		}
-		if (bottom == 4)
-		{
 			rra(stack_a);
 			pb(stack_a, stack_b);
 			sort_four(stack_a, stack_b);
 			pa(stack_a, stack_b);
 			ra(stack_a);
 		}
-		else if (top_prev == 4)
+		if (stack_a->bottom->index == 4)
+		{
+			rra(stack_a);
+			pb(stack_a, stack_b);
+			sort_four(stack_a, stack_b);
+			pa(stack_a, stack_b);
+			ra(stack_a);
+		}
+		else if (stack_a->top->prev->index == 4)
 		{
 			ra(stack_a);
 			pb(stack_a, stack_b);
@@ -162,7 +151,7 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 			pa(stack_a, stack_b);
 			ra(stack_a);
 		}
-		else if (half == 4)
+		else if (stack_a->bottom->next->next->index == 4)
 		{
 			ra(stack_a);
 			ra(stack_a);
@@ -173,4 +162,3 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 		}
 	}
 }
-
