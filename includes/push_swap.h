@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 11:55:01 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:30:52 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void				check_err(int argc, char *argv[]);
 // checkers
 void				insufficient_args(int argc);
 int					check_sort_stack(t_stack *stack);
-void				is_input_sort(int argc, char *argv[]);
+int					is_imput_sort(int argc, char *argv[]);
 
 // movements
 void				swap(t_stack *stack);

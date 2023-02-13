@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 05:07:59 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 12:38:28 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:31:10 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	has_duplicates(int argc, char *argv[])
 	return (0);
 }
 
-void	is_input_sort(int argc, char *argv[])
+int	is_imput_sort(int argc, char *argv[])
 {
 	int	i;
 
@@ -64,9 +64,9 @@ void	is_input_sort(int argc, char *argv[])
 	while (i < argc - 1)
 	{
 		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
-			return ;
+			return (0);
 		i++;
 	}
 	exit(0);
-	free(argv);
+	return (1);
 }

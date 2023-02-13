@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 01:46:24 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:41:36 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:24:50 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ void	check_err(int argc, char *argv[])
 	if (invalid_number(argv) || has_duplicates(argc, argv))
 	{
 		error_message();
-		exit(1);
+		exit(0);
+	}
+	else if (is_imput_sort(argc, argv) == 1)
+	{
+		error_message();
+		exit(0);
 	}
 }
 

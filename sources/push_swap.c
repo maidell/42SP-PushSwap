@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 12:15:29 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:31:20 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	is_input_sort(argc, argv);
 	check_err(argc, argv);
 	insufficient_args(argc);
 	a = create_stack();
