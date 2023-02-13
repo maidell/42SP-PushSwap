@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:20:56 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:22:08 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void				sort_four(t_stack *stack_a, t_stack *stack_b);
 void				sort_five(t_stack *stack_a, t_stack *stack_b);
 void				utils_sort_four(t_stack *stack_a, t_stack *stack_b);
 void				utils_sort_five(t_stack *stack_a, t_stack *stack_b);
+void	update_five_sorts(t_stack *stack_a, t_stack *stack_b);
+
 
 // handle index
 void				create_index(t_stack *stack);
