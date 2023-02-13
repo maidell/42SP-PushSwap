@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 05:07:59 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 12:16:20 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:16:51 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	is_input_sort(int argc, char *argv[])
 
 void	is_imput_sort(int argc, char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < argc - 1)
