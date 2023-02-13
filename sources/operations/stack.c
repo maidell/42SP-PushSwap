@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:02:08 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:41:21 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,15 @@ t_node	*insert_node(t_stack *stack, int num)
 	return (new_node);
 }
 
-void	free_stack(t_stack *stack)
+void	fill_stack(int argc, char **argv, t_stack *stack)
 {
-	t_node	*node;
-	t_node	*tmp;
+	int	i;
 
-	node = stack->top;
-	while (node)
+	stack->size = argc - 1;
+	i = argc - 1;
+	while (i > 0)
 	{
-		tmp = node;
-		node = node->prev;
-		free(tmp);
+		insert_node(stack, ft_atoi(argv[i]));
+		i--;
 	}
-	free(stack);
-}
-
-void	free_all(t_stack *a, t_stack *b)
-{
-	free_stack(a);
-	free_stack(b);
 }

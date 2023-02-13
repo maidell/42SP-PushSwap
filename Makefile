@@ -32,6 +32,7 @@ SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/operations/rotate.c \
 		$(SRCS_PATH)/operations/swap.c \
 		$(SRCS_PATH)/check_full/checkers.c \
+		$(SRCS_PATH)/check_full/free_functions.c \
 		$(SRCS_PATH)/check_full/handle_errors.c \
 		$(SRCS_PATH)/sort_algs/radix.c \
 		$(SRCS_PATH)/sort_algs/sort_five.c \
@@ -77,19 +78,19 @@ run3:
 	@./$(NAME) 3 2 1
 
 run5:
-	@ARG="4 3 2 1 5"; ./$(NAME) $$ARG | ./checker_linux $$ARG
+	@./$(NAME) @ARG="4 3 2 1 5"; ./$(NAME) $$ARG | ./checker_linux $$ARG
 
 run7:
-	@ARG="20 6 50 8 4 3 7 9 12; ./$(NAME) $$ARG | ./checker_linux $$ARG
+	@./$(NAME) @ARG="20 6 50 8 4 3 7 9 12; ./$(NAME) $$ARG | ./checker_linux $$ARG
 
 run-sorted-1:
-	@./$(NAME) 10 11 12 14 13; 
+	@./$(NAME) 10 11 12 13 14;
 
 run-sorted-2:
-	@./$(NAME) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17; 
+	@./$(NAME) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17;
 
 run-sorted-3:
-	@./$(NAME) 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 99 98; 
+	@./$(NAME) 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98;
 
 run80:
 	@ARG="7 27 20 66 42 10 44 9 2 60 50 17 22 58 8 41 68 6 26 12 55 54 23 57 62 21 36 69 14 1 24 46 52 61 64 35 19 67 51 56 40 34 28 30 15 3 37 70 39 32 25 29 63 13 11 53 18 48 45 4 31 5 16 65 49 47 38 33 43 59"; ./$(NAME) $$ARG | ./checker_linux $$ARG

@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 12:01:47 by mmaidel-         ###   ########.fr       */
+/*   Created: 2023/02/13 11:41:46 by mmaidel-          #+#    #+#             */
+/*   Updated: 2023/02/13 11:41:51 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_stack(t_stack *stack)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_node	*node;
+	t_node	*tmp;
 
-	is_input_sort(argc, argv);
-	check_err(argc, argv);
-	insufficient_args(argc);
-	a = create_stack();
-	b = create_stack();
-	fill_stack(argc, argv, a);
-	create_index(a);
+	node = stack->top;
+	while (node)
+	{
+		tmp = node;
+		node = node->prev;
+		free(tmp);
+	}
+	free(stack);
+}
 
-	sort_all(a, b);
-	free_all(a, b);
-	return (0);
+void	free_all(t_stack *a, t_stack *b)
+{
+	free_stack(a);
+	free_stack(b);
 }
