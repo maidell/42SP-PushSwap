@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 11:13:25 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:16:54 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ void	sort_three(t_stack *stack_a)
 		}
 		else if (stack_a->top->index == 1 && stack_a->bottom->index == 2)
 			sa(stack_a);
-		else if (stack_a->top->index == 0 && stack_a->bottom->index == 2)
-		{
-			return ;
-		}
 		else if (stack_a->top->index == 0 && stack_a->bottom->index == 1)
 		{
 			rra(stack_a);
