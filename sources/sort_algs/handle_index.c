@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:24:46 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:03:00 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:04:14 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	create_index(t_stack *stack)
 {
 	t_node  **array;
-	int     i;
-	t_node  *node;
+    t_node  *node;
+    int     i;
 
 	array = (t_node **)malloc(sizeof(t_node *) * stack->size);
 	node = stack->bottom;
