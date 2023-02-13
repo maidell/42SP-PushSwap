@@ -6,22 +6,22 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 02:18:14 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/12 00:03:16 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:37:51 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-int	ft_putchar(char c);
-int	ft_putnbr(long int n);
-int	ft_putstr(char *str);
-int	format(const char *str, va_list type);
-int	ft_printf(const char *printer, ...);
-int	ft_puthex(unsigned long long number, char flag);
+int		ft_putchar(char c);
+int		ft_putnbr(long int n);
+int		ft_putstr(char *str);
+int		format(const char *str, va_list type);
+int		ft_printf(const char *printer, ...);
+int		ft_puthex(unsigned long long number, char flag);
 
 int		ft_isalnum(int arg);
 int		ft_isdigit(int arg);
@@ -34,7 +34,7 @@ int		ft_toupper(int arg);
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-char	*ft_strrchr(const char	*s, int c);
+char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
@@ -61,6 +61,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int nb);
 int		ft_atoi(const char *str);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
