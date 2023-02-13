@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:10:30 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:31:30 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:02:08 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,12 @@ t_node	*insert_node(t_stack *stack, int num)
 	{
 		stack->bottom = new_node;
 		stack->top = new_node;
-		//new_node->index = 0;
 	}
 	else
 	{
 		new_node->prev = stack->top;
 		stack->top->next = new_node;
 		stack->top = new_node;
-		//new_node->index = new_node->prev->index + 1;
 	}
 	return (new_node);
 }
