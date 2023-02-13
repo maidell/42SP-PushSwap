@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 11:03:54 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:13:25 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	sort_three(t_stack *stack_a)
 			ra(stack_a);
 	}
 }
-
 void	sort_four(t_stack *stack_a, t_stack *stack_b)
 {
 	if (check_sort_stack(stack_a) == 0)
@@ -69,21 +68,33 @@ void	sort_four(t_stack *stack_a, t_stack *stack_b)
 		}
 		else if (stack_a->bottom->next->index == 3)
 		{
-			rra(stack_a);
-			rra(stack_a);
-			pb(stack_a, stack_b);
-			sort_three(stack_a);
-			pa(stack_a, stack_b);
-			ra(stack_a);
+			utils_sort_four(stack_a, stack_b);
 		}
 		else if (stack_a->top->prev->index == 3)
 		{
-			ra(stack_a);
-			pb(stack_a, stack_b);
-			sort_three(stack_a);
-			pa(stack_a, stack_b);
-			ra(stack_a);
+			utils_sort_four(stack_a, stack_b);
 		}
+	}
+}
+
+void	utils_sort_four(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a->bottom->next->index == 3)
+	{
+		rra(stack_a);
+		rra(stack_a);
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
+	}
+	else if (stack_a->top->prev->index == 3)
+	{
+		ra(stack_a);
+		pb(stack_a, stack_b);
+		sort_three(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
 	}
 }
 
@@ -108,16 +119,6 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 		}
 		else if (stack_a->bottom->next->index == 4)
 		{
-			rra(stack_a);
-			rra(stack_a);
-			pb(stack_a, stack_b);
-			sort_four(stack_a, stack_b);
-			pa(stack_a, stack_b);
-			ra(stack_a);
-		}
-		else if (stack_a->bottom->next->next->index == 4)
-		{
-			rra(stack_a);
 			rra(stack_a);
 			rra(stack_a);
 			pb(stack_a, stack_b);
