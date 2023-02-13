@@ -6,13 +6,12 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:06 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 03:35:06 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:32:27 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// ordena um array de inteiros usando o algoritmo merge sort prenchendo o array de cima para baixo
 void	merge_sort(t_node **array, int size)
 {
 	int		half;
@@ -21,15 +20,10 @@ void	merge_sort(t_node **array, int size)
 	int i, j, k;
 	if (size > 1)
 	{
-		// calcula o half do array
 		half = size / 2;
-		// aloca o array temporário
 		array_tmp = (t_node **)malloc(size * sizeof(t_node *));
-		// ordena a primeira metade do array
 		merge_sort(array, half);
-		// ordena a segunda metade do array
 		merge_sort(array + half, size - half);
-		// intercala as duas metades ordenadas
 		i = 0;
 		while (i < half)
 		{
@@ -59,14 +53,10 @@ void	merge_sort(t_node **array, int size)
 			}
 			k++;
 		}
-		// libera o array temporário
 		free(array_tmp);
 	}
 }
 
-// função create_index, recebe uma stack e cria um array com os valores da stack
-// ordena o array usando a função merge_sort,
-// preenche o campo index de cada nodo da stack em orden crescente iniciando de 0
 void	create_index(t_stack *stack)
 {
 	t_node	**array;
@@ -92,6 +82,3 @@ void	create_index(t_stack *stack)
 	}
 	free(array);
 }
-
-
-// usa função merge sort para ordenar a stack a com as funções de movimento

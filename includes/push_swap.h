@@ -6,20 +6,12 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 01:28:10 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:27:59 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-# ifndef MAX_INT
-#  define MAX_INT 2147483647
-# endif
-
-# ifndef MIN_INT
-#  define MIN_INT -2147483648
-# endif
 
 # include "../libft/libft.h"
 # include <stdlib.h>
@@ -45,9 +37,9 @@ typedef struct s_stack
 t_node				*create_node(int value);
 t_stack				*create_stack(void);
 t_node				*insert_node(t_stack *stack, int num);
+void				fill_stack(int argc, char **argv, t_stack *stack);
 
 // free functions
-void				free_stack(t_stack *stack);
 void				free_all(t_stack *a, t_stack *b);
 
 // handle errors
@@ -88,20 +80,16 @@ void				sort_three(t_stack *stack_a);
 void				sort_four(t_stack *stack_a, t_stack *stack_b);
 void				sort_five(t_stack *stack_a, t_stack *stack_b);
 
-// bubble sort
-void				merge_sort(t_node **array, int tamanho);
-void				sort_stack_copy(t_stack *stack);
+// handle index
 void				create_index(t_stack *stack);
 
 // utils sort functions
-t_stack				*copy_stack(t_stack *stack);
-int					max_index(t_stack *stack);
-int					min_index(t_stack *stack);
 int					is_sorted(t_node **node);
 
 // sort_algs
 void				sort_less_five(t_stack *stack_a, t_stack *stack_b);
 void				sort_all(t_stack *stack_a, t_stack *stack_b);
-void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+void				radix_sort(t_stack *stack_a, t_stack *stack_b);
+void				merge_sort(t_node **array, int tamanho);
 
 #endif

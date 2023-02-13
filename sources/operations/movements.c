@@ -6,13 +6,11 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 00:06:12 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 17:18:42 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:31:03 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 void	pa(t_stack *a, t_stack *b)
 {

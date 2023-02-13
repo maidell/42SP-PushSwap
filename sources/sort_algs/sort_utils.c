@@ -6,75 +6,30 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:13:11 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 22:01:06 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:33:49 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// max_index retorna o indice do maior valor da stack
-int max_index(t_stack *stack)
+void	sort_less_five(t_stack *stack_a, t_stack *stack_b)
 {
-    int max;
-    int index;
-    int i;
-    t_node *node;
-
-    max = stack->top->value;
-    index = 0;
-    i = 0;
-    node = stack->top;
-    while (node)
-    {
-        if (node->value > max)
-        {
-            max = node->value;
-            index = i;
-        }
-        node = node->next;
-        i++;
-    }
-    return (index);
+	if (stack_a->size == 2)
+		sort_two(stack_a);
+	else if (stack_a->size == 3)
+		sort_three(stack_a);
+	else if (stack_a->size == 4)
+		sort_four(stack_a, stack_b);
+	else if (stack_a->size == 5)
+		sort_five(stack_a, stack_b);
 }
 
-// min_index retorna o indice do menor valor da stack   
-int min_index(t_stack *stack)
+void	sort_all(t_stack *stack_a, t_stack *stack_b)
 {
-    int min;
-    int index;
-    int i;
-    t_node *node;
-
-    min = stack->top->value;
-    index = 0;
-    i = 0;
-    node = stack->top;
-    while (node)
-    {
-        if (node->value < min)
-        {
-            min = node->value;
-            index = i;
-        }
-        node = node->next;
-        i++;
-    }
-    return (index);
-}
-
-// verifica se a stack está ordenada
-int	is_sorted(t_node **node)
-{
-	t_node		*temp;
-
-	temp = *node;
-	while (temp)
-	{
-		if (!temp->next)
-			return (1);
-		if (temp->value > temp->next->value)
-			return (0);
-		temp = temp->next;
-	}
-	return (1);
+	// t_stack *temp_stack;
+	//temp_stack = sort_stack_copy(stack);
+	if (stack_a->size <= 5)
+		sort_less_five(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
 }

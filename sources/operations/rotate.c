@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 02:55:26 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/09 02:35:11 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:31:34 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rotate(t_stack *stack)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (stack->top == stack->bottom)
 		return ;

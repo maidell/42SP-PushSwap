@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 07:17:18 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:34:29 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@ void	print_node(t_node *node)
 {
 	if (node == NULL)
 		return ;
-	ft_printf("%d (%d)\n", node->value,node->index);
+	ft_printf("%d (%d)\n", node->value, node->index);
 	print_node(node->prev);
 }
 
 void	fill_stack(int argc, char **argv, t_stack *stack)
 {
 	int	i;
+
 	stack->size = argc - 1;
-	
 	i = argc - 1;
-	//i = 1;
 	while (i > 0)
 	{
 		insert_node(stack, ft_atoi(argv[i]));
@@ -45,26 +44,8 @@ int	main(int argc, char **argv)
 	b = create_stack();
 	fill_stack(argc, argv, a);
 	is_input_sort(argc, argv);
-
-	//printa a stack a preenchida:
-		//printf("Stack A\n");
-		//print_node(a->top);
-	
-	//chama a função create_index
 	create_index(a);
-		//printf("Stack A com indices\n");
-		//print_node(a->top);
 	sort_all(a, b);
-	
-	//printa a stack a preenchida com os indices:
-	//printf("Stack A ordenada\n");
-	//print_node(a->top);
-
-	// if (check_sort_stack(a))
-	// 	ft_printf("Stack A ordenada\n");
-	// else
-	// 	ft_printf("Stack A não ordenada\n");
 	free_all(a, b);
 	return (0);
 }
-

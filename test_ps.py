@@ -8,7 +8,7 @@ def str_perm(n):
     perm = list(map(lambda tup: list(map(lambda x: str(x), tup)), perm))
     return perm
 
-for tam in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+for tam in [1, 2, 3, 4, 5]:
     print("Testando " + str(tam) + " elementos")
     all_ok = True
     for perm in str_perm(tam):

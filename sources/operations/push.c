@@ -6,13 +6,12 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 02:55:23 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/09 02:35:11 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:31:14 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Moves the top of stack x to the top of stack y
 void	push(t_stack *x, t_stack *y)
 {
 	t_node *tmp;
