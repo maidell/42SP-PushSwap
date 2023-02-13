@@ -36,7 +36,7 @@ SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/sort_algs/radix.c \
 		$(SRCS_PATH)/sort_algs/sort_five.c \
 		$(SRCS_PATH)/sort_algs/sort_utils.c \
-		$(SRCS_PATH)/sort_algs/merge_sort.c \
+		$(SRCS_PATH)/sort_algs/bubble_sort.c \
 		$(SRCS_PATH)/sort_algs/handle_index.c \
 
 OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))

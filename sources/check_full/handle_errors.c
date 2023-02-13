@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 01:46:24 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:39:40 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:41:36 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,3 @@ int	limits_int(char *str)
 	free(converted_str);
 	return (0);
 }
-
-
