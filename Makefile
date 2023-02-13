@@ -27,7 +27,7 @@ LIBFT_A		= $(LIBFT_D)/libft.a
 
 SRCS 		=	$(SRCS_PATH)/push_swap.c  \
 		$(SRCS_PATH)/operations/stack.c \
-		$(SRCS_PATH)/operations/movements.c \
+		$(SRCS_PATH)/operations/utils_rotate.c \
 		$(SRCS_PATH)/operations/push.c \
 		$(SRCS_PATH)/operations/rotate.c \
 		$(SRCS_PATH)/operations/swap.c \

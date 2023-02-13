@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 02:55:29 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:31:44 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:36:15 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,23 @@ void	swap(t_stack *stack)
 	stack->top = tmp;
 	if (stack->top->prev == NULL)
 		stack->bottom = stack->top->next;
+}
+
+void	sa(t_stack *a)
+{
+	ft_printf("sa\n");
+	swap(a);
+}
+
+void	sb(t_stack *b)
+{
+	ft_printf("sb\n");
+	swap(b);
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	ft_printf("ss\n");
+	swap(a);
+	swap(b);
 }

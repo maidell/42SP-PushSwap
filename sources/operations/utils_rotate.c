@@ -1,47 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements.c                                        :+:      :+:    :+:   */
+/*   utils_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 00:06:12 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:31:03 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:37:02 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	pa(t_stack *a, t_stack *b)
-{
-	ft_printf("pa\n");
-	push(b, a);
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-	ft_printf("pb\n");
-	push(a, b);
-}
-
-void	sa(t_stack *a)
-{
-	ft_printf("sa\n");
-	swap(a);
-}
-
-void	sb(t_stack *b)
-{
-	ft_printf("sb\n");
-	swap(b);
-}
-
-void	ss(t_stack *a, t_stack *b)
-{
-	ft_printf("ss\n");
-	swap(a);
-	swap(b);
-}
 
 void	ra(t_stack *a)
 {
