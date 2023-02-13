@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:13:11 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 09:33:49 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:57:19 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	sort_less_five(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_all(t_stack *stack_a, t_stack *stack_b)
 {
-	// t_stack *temp_stack;
-	//temp_stack = sort_stack_copy(stack);
 	if (stack_a->size <= 5)
 		sort_less_five(stack_a, stack_b);
 	else
