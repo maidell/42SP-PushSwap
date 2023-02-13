@@ -13,11 +13,11 @@
 #include "push_swap.h"
 
 // cria função bubble sort
-void bubble_sort(t_node **array, int size)
+void	bubble_sort(t_node **array, int size)
 {
-	int i, j;
-	t_node *tmp;
+	t_node	*tmp;
 
+	int i, j;
 	i = 0;
 	while (i < size)
 	{
