@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 12:01:47 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:15:29 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 	b = create_stack();
 	fill_stack(argc, argv, a);
 	create_index(a);
-
 	sort_all(a, b);
 	free_all(a, b);
 	return (0);
