@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/13 11:30:32 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:32:30 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,6 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 			utils_sort_five(stack_a, stack_b);
 		}
 		else if (stack_a->top->prev->prev->index == 4)
-		{
-			utils_sort_five(stack_a, stack_b);
-		}
-		else if (stack_a->top->prev->prev->prev->index == 4)
 		{
 			utils_sort_five(stack_a, stack_b);
 		}
