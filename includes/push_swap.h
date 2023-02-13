@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:37:51 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:19:58 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:28:10 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int					is_sorted(t_node **node);
 // sort_algs
 void				sort_less_five(t_stack *stack_a, t_stack *stack_b);
 void				sort_all(t_stack *stack_a, t_stack *stack_b);
+void	radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

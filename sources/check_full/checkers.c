@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 05:07:59 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:19:38 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:55:20 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	check_sort_stack(t_stack *stack)
 	t_node	*node;
 
 	node = stack->top;
-	while (node->next)
+	while (node->prev)
 	{
-		if (node->value > node->next->value)
+		if (node->value > node->prev->value)
 			return 0;
-		node = node->next;
+		node = node->prev;
 	}
 	return(1);
 }

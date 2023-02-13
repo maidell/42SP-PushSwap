@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:06 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/12 00:06:34 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 03:35:06 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,6 @@ void	create_index(t_stack *stack)
 	}
 	free(array);
 }
+
+
+// usa função merge sort para ordenar a stack a com as funções de movimento

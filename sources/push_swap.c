@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:38:03 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/12 00:04:37 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 07:17:18 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ int	main(int argc, char **argv)
 	//printf("Stack A ordenada\n");
 	//print_node(a->top);
 
-	
+	// if (check_sort_stack(a))
+	// 	ft_printf("Stack A ordenada\n");
+	// else
+	// 	ft_printf("Stack A não ordenada\n");
 	free_all(a, b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:52 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:56:35 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 07:26:52 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	sort_two(t_stack *stack_a)
 {
-	if (check_sort_stack(stack_a) == 1)
+	if (check_sort_stack(stack_a) == 0)
 		sa(stack_a);
 }
 
 void	sort_three(t_stack *stack_a)
 {
-	if (check_sort_stack(stack_a) == 1)
+	if (check_sort_stack(stack_a) == 0)
 	{
 		if (stack_a->bottom->index == 0 && stack_a->top->index == 2)
 		{
@@ -49,7 +49,7 @@ void	sort_three(t_stack *stack_a)
 
 void	sort_four(t_stack *stack_a, t_stack *stack_b)
 {
-	if (check_sort_stack(stack_a) == 1)
+	if (check_sort_stack(stack_a) == 0)
 	{
 		if (stack_a->top->index == 3)
 		{
@@ -128,7 +128,7 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 	top_prev = stack_a->top->prev->index;
 	bottom = stack_a->bottom->index;
 	top = stack_a->top->index;
-	if (check_sort_stack(stack_a) == 1)
+	if (check_sort_stack(stack_a) == 0)
 	{
 		if (top == 4)
 		{
@@ -192,6 +192,6 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 	//temp_stack = sort_stack_copy(stack);
 	if (stack_a->size <= 5)
 		sort_less_five(stack_a, stack_b);
-	//else
-	//radix_sort(stack);
+	else
+	radix_sort(stack_a, stack_b);
 }
