@@ -6,7 +6,7 @@
 /*   By: mmaidel- <mmaidel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 01:46:24 by mmaidel-          #+#    #+#             */
-/*   Updated: 2023/02/06 11:33:52 by mmaidel-         ###   ########.fr       */
+/*   Updated: 2023/02/13 09:38:52 by mmaidel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	check_err(int argc, char *argv[])
 {
-	if (invalid_number(argv) ||
-		has_duplicates(argc, argv))
+	if (invalid_number(argv) || has_duplicates(argc, argv))
 	{
 		error_message();
 		exit(1);
@@ -74,8 +73,6 @@ int	limits_int(char *str)
 	free(converted_str);
 	return (0);
 }
-
-
 
 int	has_duplicates(int argc, char *argv[])
 {
